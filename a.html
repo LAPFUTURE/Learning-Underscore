@@ -1,0 +1,29 @@
+<!-- <script src="https://connectyoume.top/lapJS/a.js"></script>
+<script src="https://connectyoume.top/lapJS/b.js"></script>
+<script src="https://connectyoume.top/lapJS/c.js"></script>
+<script src="https://connectyoume.top/lapJS/d.js"></script>
+<script src="https://connectyoume.top/lapJS/e.js"></script> -->
+
+<script src="https://connectyoume.top/lapJS/lap.js" charset="utf-8"></script>
+<script src="https://connectyoume.top/lapJS/underscore-min.js"></script>
+
+<script type="text/javascript">
+	function checker(){
+		var validators = _.toArray(arguments);
+		return function(obj){
+			return _.reduce(validators,function(errs,check){
+				if(check(obj)){
+					return errs;
+				}else{
+					return _.chair(errs).push(check.message).value();
+				}
+			},[]);
+		}
+	}
+	(function(){
+		console.log(typeof arguments,"<>", _.toArray(arguments));
+	}([1,2,3,4,5,6],[3,2,1]))
+
+
+
+</script>
